@@ -38,6 +38,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 ```
 React will create a root for the div, and **take over managing the DOM** inside it.
 It returns an object with 2 methods, `render` and `unmount`.
+
 8. Finally, inject the element returned by `createElement` inside the root object created above, by using render method of root element.
 ```
 root.render(heading);
