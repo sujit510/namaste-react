@@ -44,4 +44,4 @@ It returns an object with 2 methods, `render` and `unmount`.
 root.render(heading);
 ```
 
-Next: Click here to go to next session notes.
+Next: [Click here](https://github.com/sujit510/namaste-react/tree/session-2-ignition) to go to next session notes.
