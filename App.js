@@ -1,8 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const heading1 = React.createElement( "h1", {}, "I am header-11" );
-const heading2 = React.createElement( "h2", {}, "I am header-22" );
-const container = React.createElement( "div", { id: "container" }, [ heading1, heading2 ] )
+const heading1 = () => (
+    <h3 id="title" key="h2">
+        FC Heading
+    </h3>
+)
+
+const heading2 = (
+    <h3 id="title" key="h2">
+        Normal Heading
+    </h3>
+)
+
+const Container = () => (
+    <h1 id="title" key="h2">
+        <heading1 />
+        {heading2}
+        Inside container
+    </h1>
+)
+
 const root = ReactDOM.createRoot( document.getElementById( "root" ) );
-root.render( container );
+console.log("Hello world")
+root.render( <Container /> );

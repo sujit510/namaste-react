@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "A live course Namaste React by Akshay Saini",
   "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
@@ -16,6 +18,8 @@
   },
   "homepage": "https://github.com/sujit510/namaste-react#readme",
   "devDependencies": {
+    "@babel/core": "^7.20.7",
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "parcel": "^2.8.2",
     "process": "^0.11.10"
   },
