@@ -1,0 +1,26 @@
+{
+  "name": "my-namaste-react-app",
+  "version": "1.0.0",
+  "description": "A live course Namaste React by Akshay Saini",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sujit510/namaste-react.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sujit510/namaste-react/issues"
+  },
+  "homepage": "https://github.com/sujit510/namaste-react#readme",
+  "devDependencies": {
+    "parcel": "^2.8.2",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
