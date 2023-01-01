@@ -43,3 +43,5 @@ npx parcel index.html --https
 - Transitive dependecies: It is a feature the package manager takes care of where it installs the dependencies and the packages these dependencies are in turn dependent on. i.e. it takes care of dependency tree
 - You can add browserslist to package.json which is a string array and can accept string values like:
 "last 2 versions" (to support 70% of browsers) or "last 2 Chrome versions" (only last 2 chrome versions - NOT RECOMMENDED). This list ensures the app works for the provided list of browsers while it may not support few features on other browsers.
+
+Next: [Click here](https://github.com/sujit510/namaste-react/tree/session-3-laying-the-foundation) to go to next session notes.
