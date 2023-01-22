@@ -1,26 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Header } from './components/Header';
+import { Body } from './components/Body';
+import { Footer } from './components/Footer';
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
+import { AboutUs } from './components/AboutUs';
+import { Error } from './components/Error';
+import { RestaurantMenu } from './components/RestaurantMenu';
 
-const heading1 = () => (
-    <h3 id="title" key="h2">
-        FC Heading
-    </h3>
+const AppLayout = () => (
+    <>
+        <Header />
+        {/* <Body /> */}
+        <Outlet />
+        <Footer />
+    </>
 )
-
-const heading2 = (
-    <h3 id="title" key="h2">
-        Normal Heading
-    </h3>
-)
-
-const Container = () => (
-    <h1 id="title" key="h2">
-        <heading1 />
-        {heading2}
-        Inside container
-    </h1>
-)
+const appRouter = createBrowserRouter([
+    {
+        path: '/',
+        element: <AppLayout />,
+        errorElement: <Error />,
+        children: [{
+            path: '/',
+            element: <Body />
+        }, {
+            path: '/about',
+            element: <AboutUs />
+        }, {
+            path: '/restaurant/:id',
+            element: <RestaurantMenu />
+        }]
+    },
+])
 
 const root = ReactDOM.createRoot( document.getElementById( "root" ) );
-console.log("Hello world")
-root.render( <Container /> );
+root.render( <RouterProvider router={appRouter} /> );
