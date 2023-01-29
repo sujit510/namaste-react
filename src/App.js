@@ -14,7 +14,6 @@ const InstaMart = lazy(() => import('./components/InstaMart'));
 const AppLayout = () => (
     <>
         <Header />
-        {/* <Body /> */}
         <Outlet />
         <Footer />
     </>

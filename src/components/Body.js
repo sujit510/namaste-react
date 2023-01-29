@@ -8,7 +8,7 @@ export const Body = () => {
         getRestautants().then(setRestData);
     }, []);
     return (
-    <div className='restaurant-cards'>
+    <div className='flex flex-wrap'>
         <RestaurantCardList restautrants={restData}/>
     </div>
 )};

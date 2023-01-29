@@ -6,11 +6,11 @@ import { Title } from './Title'
 export const Header = () => {
     const isOnline = useOnline();
     return (
-    <div className='header'>
+    <div className='flex bg-pink-100'>
         <Title />
-        <div className='nav-items'>
+        <div className='flex text-re'>
             {isOnline ? '' : <>🔴 Offline, please check internet!!</>}
-            <ul>
+            <ul className='ml-20 flex items-center space-x-2'>
                 <li>
                     <Link to="/" >
                     Home
