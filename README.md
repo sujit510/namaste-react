@@ -1,4 +1,2 @@
-## Namaste React Course - Session 10 - Jo Dikhta hai wo bikta hai - 28/01/2023
-- Tailwind CSS
-    - Can be used as CDN
-    - 
+## Namaste React Course - Session 11 - Data is the enw oil - 29/01/2023
+- React Dev Tool can help us to know state and props of a Component
