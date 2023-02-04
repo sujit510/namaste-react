@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import useOnline from '../utils/useOnline'
 import UserContext from '../utils/UserContext'
@@ -8,6 +9,7 @@ export const Header = () => {
     const isOnline = useOnline();
     const { user, setUser } = useContext(UserContext);
     const [ userLocal, setLocalUser ] = useState({});
+    const cartItems = useSelector(store => store.cart.items);
 
     return (
     <div className='flex bg-pink-100'>
@@ -30,7 +32,11 @@ export const Header = () => {
                     </Link>
                 </li>
                 <li>Contact</li>
-                <li>Cart</li>
+                <li>
+                <Link to="/cart" >
+                    Cart
+                </Link> - {cartItems?.length ?? 0} items
+                </li>
             </ul>
         </div>
         <div className='ml-auto'>

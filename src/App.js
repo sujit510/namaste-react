@@ -9,29 +9,37 @@ import { Error } from './components/Error';
 import { RestaurantMenu } from './components/RestaurantMenu';
 import { Shimmer } from './components/Shimmer';
 import UserContext from './utils/UserContext';
+import { Provider } from 'react-redux';
+import { store } from './utils/store';
+import { Cart } from './components/Cart';
 
-const InstaMart = lazy(() => import('./components/InstaMart'));
+const InstaMart = lazy( () => import( './components/InstaMart' ) );
 
 const AppLayout = () => {
-    const [user, setUser] = useState({
+    const [ user, setUser ] = useState( {
         name: 'Sujit',
         email: 'sujit510@gmail.com'
-    });
+    } );
     return (
-        <UserContext.Provider value={{ user, setUser }}>
-    <>
-        <Header />
-        <Outlet />
-        <Footer />
-    </>
-    </UserContext.Provider>
-)}
-const appRouter = createBrowserRouter([
+        <Provider store={ store }>
+            <UserContext.Provider value={ { user, setUser } }>
+                <div className='flex flex-col h-screen'>
+                    <Header />
+                    <div className='flex-grow'>
+                        <Outlet />
+                    </div>
+                    <Footer />
+                </div>
+            </UserContext.Provider>
+        </Provider>
+    )
+}
+const appRouter = createBrowserRouter( [
     {
         path: '/',
         element: <AppLayout />,
         errorElement: <Error />,
-        children: [{
+        children: [ {
             path: '/',
             element: <Body />
         }, {
@@ -43,10 +51,13 @@ const appRouter = createBrowserRouter([
         }, {
             // Lazily loaded route, component
             path: '/instamart',
-            element: <Suspense fallback={<Shimmer />}><InstaMart /></Suspense>
-        }]
+            element: <Suspense fallback={ <Shimmer /> }><InstaMart /></Suspense>
+        }, {
+            path: '/cart',
+            element: <Cart />
+        } ]
     },
-])
+] )
 
 const root = ReactDOM.createRoot( document.getElementById( "root" ) );
-root.render( <RouterProvider router={appRouter} /> );
+root.render( <RouterProvider router={ appRouter } /> );
