@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { getRestautantInfo } from "../service/restaurants";
 
 const useRestaurant = (restaurantId) => {
     const [restrauntInfo, setRestrauntInfo] = useState({});
-    getRestautantInfo(restaurantId)
+    useEffect(() => {
+        getRestautantInfo(restaurantId)
         .then(setRestrauntInfo)
-
+    }, [])
     return restrauntInfo;
 }
 
