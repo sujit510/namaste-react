@@ -15,7 +15,9 @@ export const Header = () => {
     <div className='flex bg-pink-100'>
         <Title />
         <div className='flex text-re'>
-            {isOnline ? '' : <>🔴 Offline, please check internet!!</>}
+            <div data-testid="online-status">{isOnline
+                ? <>✅ Online</>
+                : <>🔴 Offline, please check internet!!</>}</div>
             <ul className='ml-20 flex items-center space-x-2'>
                 <li>
                     <Link to="/" >
@@ -35,7 +37,7 @@ export const Header = () => {
                 <li>
                 <Link to="/cart" >
                     Cart
-                </Link> - {cartItems?.length ?? 0} items
+                </Link> - <span data-testid="cart-count">{cartItems?.length ?? 0} items</span>
                 </li>
             </ul>
         </div>

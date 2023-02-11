@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-export default useOnline = () => {
+export default () => {
     const [isOnline, setIsOnline] = useState(true);
     const handleOnline = () => setIsOnline(true);
     const handleOffline = () => setIsOnline(false);

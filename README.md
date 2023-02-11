@@ -65,3 +65,41 @@
             ]
         }
         ```
+
+    - While adding test case for React component using React-tetsing library, we need to install and configure ```@babel/preset-react```
+    ```npm i -D @babel/preset-react```
+    - Add following in ```.babelrc``` in ```presets```
+        ```
+        [
+            "@babel/preset-react",
+            {
+                "runtime": "automatic"
+            }
+        ]
+        ```
+
+    - It gives error as ```Unexpected character``` while reading logo.
+    - Create a mock file for image which exports a simple string.
+    - Use ```moduleNameMapper``` to map all png image to this dummy image.
+
+    - While testing any component, you need to render it first using ```render``` method of ```testing-library/react```
+    ```import { render } from "@testing-library/react";```
+    ```const header = render(<Header />)```
+    - Pass the necessary props and providers while rendering any component, similar to how they are defined to be rendered in component code itself:
+    ```
+    const header = render(
+        <StaticRouter>
+            <Provider store={ store }>
+                <Header />
+            </Provider>
+        </StaticRouter>
+    );
+    ```
+    - ```StaticRouter``` is replacement of 
+
+
+    - We need to use ```StaticRouter``` from ```react-router-dom/server``` because it runs without browser
+
+
+    - We get ```toBeInTheDocument``` from the library ```@testing-library/jest-dom``` and use it like:
+    
